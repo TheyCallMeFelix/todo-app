@@ -1,5 +1,16 @@
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import Layout from '@/components/Layout';
 import '@/styles/globals.css'
+import { AuthProvider } from 'context/AuthContext';
+
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <AuthProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </AuthProvider>
+  );
 }
